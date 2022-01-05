@@ -1,5 +1,7 @@
 <template>
-  <h1>Test</h1>
+  <div class="flex justify-center">
+    <lp-header />
+  </div>
 </template>
 
 <script>
