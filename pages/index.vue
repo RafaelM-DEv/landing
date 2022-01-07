@@ -1,9 +1,10 @@
 <template>
-  <div class="flex justify-center">
+  <main>
     <lp-header />
-  </div>
+    <lp-hero-space />
+  </main>
 </template>
 
 <script>
-export default {}
+export default { }
 </script>

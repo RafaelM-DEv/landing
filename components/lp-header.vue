@@ -1,31 +1,14 @@
 <template>
-  <div class="header container">
-    <nav class="flex justify-between">
-      <section class="flex items-center px-8 py-4">
-        <img src="../assets/logo.png" alt="Logo" class="rounded-md w-[120px] h-[50px]">
-      </section>
+  <div class="header flex justify-center">
+    <!-- pode usar a classe absolute para que a section hero fique abaixo do header -->
+    <div class="container">
+      <nav class="flex justify-between px-8">
+        <section class="flex items-center py-4 z-[10]">
+          <img src="../assets/logo.png" alt="Logo" class="rounded-md w-[120px] h-[50px]">
+        </section>
 
-      <!-- DESKTOP -->
-      <section class="hidden items-center gap-8 py-4 px-10 md:flex text-sm">
-        <div>Ancora 1</div>
-        <div>Ancora 2</div>
-        <div>Ancora 3</div>
-        <div>Ancora 4</div>
-        <div>
-          <button class="header__button">
-            label text
-          </button>
-        </div>
-      </section>
-      <section class="flex items-center md:hidden px-10">
-        <button :class="actionButton" @click="toggleMenu" />
-      </section>
-    </nav>
-
-    <!-- MOBILE -->
-    <nav v-if="initiate">
-      <section :class="mobileMenu" class="flex-col flex justify-around items-center w-screen h-screen absolute pt-10 top-0 bg-gray-700 text-white md:hidden">
-        <div class="pt-24 gap-10 flex-col flex items-center">
+        <!-- DESKTOP -->
+        <section class="hidden items-center gap-8 py-4 md:flex text-sm z-[10]">
           <div>Ancora 1</div>
           <div>Ancora 2</div>
           <div>Ancora 3</div>
@@ -35,19 +18,39 @@
               label text
             </button>
           </div>
-        </div>
-        <!-- SOCIAL-MEDIA -->
-        <div class="flex text-center flex-col">
-          <div class="flex gap-8 mb-8">
-            <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
-            <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
-            <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
-            <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
+        </section>
+        <section class="flex items-center md:hidden px-10 z-[10]">
+          <button :class="actionButton" @click="toggleMenu" />
+        </section>
+      </nav>
+
+      <!-- MOBILE -->
+      <nav v-if="initiate">
+        <section :class="mobileMenu" class="flex-col flex justify-around items-center w-screen h-screen absolute pt-10 top-0 bg-gray-700 text-white md:hidden z-[9]">
+          <div class="pt-24 gap-10 flex-col flex items-center">
+            <div>Ancora 1</div>
+            <div>Ancora 2</div>
+            <div>Ancora 3</div>
+            <div>Ancora 4</div>
+            <div>
+              <button class="header__button">
+                label text
+              </button>
+            </div>
           </div>
-          <p>@2022 Direitos Reservados</p>
-        </div>
-      </section>
-    </nav>
+          <!-- SOCIAL-MEDIA -->
+          <div class="flex text-center flex-col">
+            <div class="flex gap-8 mb-8">
+              <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
+              <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
+              <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
+              <img src="https://via.placeholder.com/30x30" alt="" class="rounded-full">
+            </div>
+            <p>@2022 Direitos Reservados</p>
+          </div>
+        </section>
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -159,14 +162,14 @@ export default {
   .slideIn {
     top: 0px;
     right: 0;
-    z-index: -1;
+    z-index: 9;
     animation: slideIn 0.5s linear;
   }
 
   .slideOut {
     top: -100vh;
     right: 0;
-    z-index: -1;
+    // z-index: -1;
     animation: slideOut 0.5s linear;
   }
 
