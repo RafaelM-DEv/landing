@@ -32,7 +32,7 @@
     "postcss": "^8.3.5",
     "postcss-import": "^14.0.2",
     "sass": "^1.46.0",
-    "sass-loader": "^10.2.0",
+    "sass-loader": "^13.0.0",
     "vue-jest": "^3.0.4"
   }
 }
